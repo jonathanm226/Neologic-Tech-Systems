@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neologic Tech Systems | Soluções Tecnológicas e Desenvolvimento de Sistemas</title>
+    
+    <!-- Metadados de SEO e Open Graph para Redes Sociais / WhatsApp -->
+    <meta name="description" content="Desenvolvimento sob medida de sistemas web, painéis administrativos e automações para impulsionar o seu negócio com alta performance.">
+    <meta property="og:title" content="Neologic Tech Systems | Softwares Inteligentes">
+    <meta property="og:description" content="Transformamos ideias complexas em soluções tecnológicas e sistemas de alta performance.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --border-color: #1f2937;
+            --accent-color: #38bdf8;
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo-area i {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            padding: 160px 8% 100px 8%;
+            text-align: center;
+            background: radial-gradient(circle at center, #1e293b 0%, var(--bg-color) 70%);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-gradient);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 80px 8%;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* SOBRE NÓS */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        /* TECH STACK */
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .tech-badge {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-badge i {
+            color: var(--accent-color);
+        }
+
+        /* FAQ (PERGUNTAS FREQUENTES) */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* FORMULÁRIO DE CONTATO */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 8%;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { display: none; }
+            .about-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <a href="index.html" class="logo-area">
+            <i class="fa-solid fa-code-branch"></i>
+            <span>Neologic Tech Systems</span>
+        </a>
+        <nav>
+            <a href="#solucoes">Soluções</a>
+            <a href="agenda-pro.html" style="color: var(--accent-color);">Agenda Pro</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#cases">Cases</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contato" style="font-weight: bold;">Contato</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Transformamos ideias complexas em <span>softwares inteligentes</span></h1>
+        <p>Desenvolvimento sob medida de sistemas web, painéis administrativos e automações para impulsionar o seu negócio com alta performance.</p>
+        <a href="https://wa.me/5531994951564?text=Olá,%20vim%20pelo%20site%20da%20Neologic%20Tech%20Systems%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Iniciar Projeto
+        </a>
+    </section>
+
+    <!-- SOLUÇÕES -->
+    <section id="solucoes" class="section">
+        <div class="section-title">
+            <h2>O que Construímos</h2>
+            <p>Soluções estruturadas para resolver problemas reais e escalar operações</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Sistemas Web Sob Medida</h3>
+                <p>Plataformas completas desenhadas exclusivamente para atender às regras do seu fluxo de trabalho, do front-end ao banco de dados.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h3>Painéis Administrativos</h3>
+                <p>Dashboards intuitivos para controle financeiro, gestão de equipes, relatórios em tempo real e monitoramento operacional centralizado.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Automações e Integrações</h3>
+                <p>Conecte seu negócio a ferramentas externas, APIs inteligentes e canais como o WhatsApp para eliminar processos manuais repetitivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NÓS -->
+    <section id="sobre" class="section" style="background: rgba(17, 24, 39, 0.4);">
+        <div class="section-title">
+            <h2>Sobre a Neologic</h2>
+            <p>Engenharia de software focada em resultados e escalabilidade</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Inovação aliada à engenharia robusta</h3>
+                <p>A Neologic Tech Systems nasceu com o propósito de descomplicar a tecnologia para empresas que precisam crescer de forma sustentável. Não entregamos apenas códigos; construímos ferramentas estratégicas que otimizam o tempo e maximizam os lucros dos nossos parceiros.</p>
+                <p>Trabalhamos com metodologias ágeis, código limpo e arquiteturas modernas para garantir que sua aplicação suporte o crescimento exponencial do seu negócio.</p>
+            </div>
+            <div class="grid-3" style="grid-template-columns: 1fr;">
+                <div class="card" style="padding: 20px;">
+                    <h3 style="color: var(--accent-color); margin-bottom: 5px;"><i class="fa-solid fa-bullseye" style="font-size: 1.2rem; margin-right: 8px;"></i> Foco em Performance</h3>
+                    <p>Sistemas rápidos, seguros e otimizados para a melhor experiência do usuário.</p>
+                </div>
+                <div class="card" style="padding: 20px;">
+                    <h3 style="color: var(--accent-color); margin-bottom: 5px;"><i class="fa-solid fa-handshake" style="font-size: 1.2rem; margin-right: 8px;"></i> Parceria de Longo Prazo</h3>
+                    <p>Suporte contínuo e evolução constante alinhados aos objetivos da sua empresa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASES DE SUCESSO -->
+    <section id="cases" class="section">
+        <div class="section-title">
+            <h2>Cases de Sucesso</h2>
+            <p>Alguns dos projetos validados e entregues pela nossa engenharia</p>
+        </div>
+        <div class="grid-3">
+            <a href="agenda-pro.html" class="card" style="text-decoration: none; color: inherit; display: block;">
+                <i class="fa-solid fa-calendar-days" style="color: #25d366;"></i>
+                <h3>Agendamento Automatizado <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; float: right; color: var(--accent-color);"></i></h3>
+                <p>Plataforma SaaS de alta performance voltada para o ecossistema de serviços e atendimento hora marcada, eliminando conflitos de horários e integrando confirmações via WhatsApp.</p>
+            </a>
+            
+            <div class="card">
+                <i class="fa-solid fa-building" style="color: #38bdf8;"></i>
+                <h3>Gestão de Ativos Imobiliários</h3>
+                <p>Painel administrativo customizado para consultorias imobiliárias gerenciarem portfólios, propriedades e status de atendimento com agilidade.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-rocket" style="color: #a855f7;"></i>
+                <h3>Sistemas Escaláveis</h3>
+                <p>Arquitetura limpa preparada para receber novas regras de negócio conforme a expansão e o crescimento de cada cliente parceiro.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS / PROVA SOCIAL (OCULTO ATÉ ALINHAR COM CLIENTES REAIS) -->
+    <section id="depoimentos" class="section" style="display: none; background: rgba(17, 24, 39, 0.4);">
+        <div class="section-title">
+            <h2>O que Dizem Nossos Clientes</h2>
+            <p>Resultados reais alcançados através das nossas soluções tecnológicas</p>
+        </div>
+        <div class="grid-3">
+            <!-- Insira os depoimentos reais aqui futuramente -->
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="tecnologias" class="section">
+        <div class="section-title">
+            <h2>Stack Tecnológico</h2>
+            <p>Ferramentas modernas de mercado garantindo velocidade, segurança e robustez</p>
+        </div>
+        <div class="tech-stack">
+            <div class="tech-badge"><i class="fa-brands fa-js"></i> JavaScript / ES6+</div>
+            <div class="tech-badge"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</div>
+            <div class="tech-badge"><i class="fa-solid fa-leaf"></i> Java Spring Boot</div>
+            <div class="tech-badge"><i class="fa-solid fa-database"></i> Supabase / PostgreSQL</div>
+            <div class="tech-badge"><i class="fa-brands fa-git-alt"></i> GitHub & Vercel</div>
+        </div>
+    </section>
+
+    <!-- FAQ (PERGUNTAS FREQUENTES) -->
+    <section id="faq" class="section" style="background: rgba(17, 24, 39, 0.4);">
+        <div class="section-title">
+            <h2>Perguntas Frequentes</h2>
+            <p>Tire suas dúvidas sobre nossos serviços e modelos de contratação</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h4>Como funciona o processo de desenvolvimento de um sistema sob medida?</h4>
+                <p>Analisamos as regras do seu negócio, estruturamos a arquitetura ideal (front-end, back-end e banco de dados) e entregamos a solução testada e pronta para uso em produção.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Quais tecnologias são utilizadas nos projetos?</h4>
+                <p>Trabalhamos com tecnologias consolidadas de mercado como Java Spring Boot, Supabase/PostgreSQL, JavaScript, HTML5 e CSS3, garantindo alta performance e segurança.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Existe suporte técnico após a entrega do software?</h4>
+                <p>Sim! Oferecemos suporte contínuo, correções e pacotes de evolução constante para acompanhar o crescimento da sua empresa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO / FORMULÁRIO -->
+    <section id="contato" class="section">
+        <div class="section-title">
+            <h2>Vamos Conversar?</h2>
+            <p>Envie os detalhes do seu projeto ou fale diretamente conosco pelo WhatsApp</p>
+        </div>
+        <div class="contact-container">
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" placeholder="Ex: Carlos Silva" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Nome da Empresa / Projeto</label>
+                    <input type="text" id="empresa" placeholder="Ex: Minha Empresa Ltda">
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Detalhes do Projeto</label>
+                    <textarea id="mensagem" rows="4" placeholder="Conte brevemente o que você precisa construir..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar Proposta via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Neologic Tech Systems. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DE INTEGRAÇÃO COM O WHATSAPP -->
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const empresa = document.getElementById('empresa').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            const numeroWhatsApp = "5531994951564";
+
+            let texto = `Olá! Meu nome é *${nome}*`;
+            if (empresa) {
+                texto += ` da empresa/projeto *${empresa}*`;
+            }
+            texto += `.\n\nDetalhes do projeto:\n${mensagem}`;
+
+            const urlWp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+            
+            window.open(urlWp, '_blank');
+        });
+    </script>
+
+</body>
+</html>
