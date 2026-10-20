@@ -200,47 +200,114 @@
         }
 
         /* PLANOS E PREÇOS */
+        .pricing-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .pricing-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 40px 30px;
-            text-align: center;
+            text-align: left;
             position: relative;
-            transition: 0.2s;
+            width: 340px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
         }
 
         .pricing-card.featured {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+            border: 2px solid var(--accent-color);
+            background: #1e293b;
+        }
+
+        .badge-destaque {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--accent-color);
+            color: #0b0f19;
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
         }
 
         .pricing-card h3 {
             font-size: 1.4rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: var(--text-main);
         }
 
         .price {
             font-size: 2.2rem;
             font-weight: 800;
             color: var(--accent-color);
-            margin: 20px 0;
+            margin-bottom: 5px;
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .setup-fee {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-style: italic;
         }
 
         .pricing-features {
             list-style: none;
             margin-bottom: 30px;
-            text-align: left;
-            color: var(--text-muted);
-            font-size: 0.95rem;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         .pricing-features i {
             color: var(--whatsapp-color);
             margin-right: 8px;
+            font-size: 1rem;
+        }
+
+        .btn-pricing {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            background: #334155;
+            color: #fff;
+        }
+
+        .btn-pricing:hover {
+            background: #475569;
+        }
+
+        .pricing-card.featured .btn-pricing {
+            background: var(--accent-gradient);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .pricing-card.featured .btn-pricing:hover {
+            opacity: 0.9;
         }
 
         /* SEGMENTOS */
@@ -288,7 +355,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 20px;
+            padding: 20px 25px;
         }
 
         .faq-item h4 {
@@ -302,25 +369,21 @@
             font-size: 0.9rem;
         }
 
-        .cta-banner {
-            text-align: center;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(37, 99, 235, 0.1) 100%);
+        /* CONTRATAR / CTA */
+        .contratar-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
             border-radius: 16px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            padding: 60px 40px;
-            margin: 40px 8%;
+            text-align: center;
         }
 
-        .cta-banner h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        .cta-banner p {
+        .contratar-box p {
+            font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            font-size: 1.05rem;
+            margin-bottom: 25px;
         }
 
         footer {
@@ -425,4 +488,83 @@
     <section id="precos" class="section">
         <div class="section-title">
             <h2>Planos e Investimento</h2>
-            <p>Escolha a modalidade ideal para colocar o
+            <p>Escolha a modalidade ideal para impulsionar a sua operação</p>
+        </div>
+        
+        <div class="pricing-grid">
+            <!-- Plano Essencial -->
+            <div class="pricing-card">
+                <h3>Essencial</h3>
+                <div class="price">R$ 69,90<span>/mês</span></div>
+                <div class="setup-fee">Implantação a partir de R$ 250,00</div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check"></i> Sistema de Agendamento Online</li>
+                    <li><i class="fa-solid fa-check"></i> Painel de Controle Simples</li>
+                    <li><i class="fa-solid fa-check"></i> Hospedagem inclusa (Vercel)</li>
+                    <li><i class="fa-solid fa-check"></i> Suporte via WhatsApp</li>
+                </ul>
+                <a href="#contato" class="btn-pricing">Escolher Essencial</a>
+            </div>
+
+            <!-- Plano Profissional (Destaque) -->
+            <div class="pricing-card featured">
+                <span class="badge-destaque">Mais Popular</span>
+                <h3>Profissional / Automação</h3>
+                <div class="price">R$ 99<span>/mês</span></div>
+                <div class="setup-fee">Implantação a partir de R$ 250,00</div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check"></i> Tudo do plano Essencial</li>
+                    <li><i class="fa-solid fa-check"></i> Domínio Próprio (.com.br)</li>
+                    <li><i class="fa-solid fa-check"></i> Lembretes Automáticos via WhatsApp</li>
+                    <li><i class="fa-solid fa-check"></i> Manutenção Evolutiva Mensal</li>
+                    <li><i class="fa-solid fa-check"></i> Suporte Prioritário</li>
+                </ul>
+                <a href="#contato" class="btn-pricing">Escolher Profissional</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" style="background: rgba(17, 24, 39, 0.4);">
+        <div class="section-title">
+            <h2>Dúvidas Frequentes</h2>
+            <p>Tudo o que você precisa saber sobre o Agenda Pro</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h4>Preciso entender de programação para gerenciar o sistema?</h4>
+                <p>Zero conhecimento técnico necessário. Entregamos painéis totalmente intuitivos e fáceis de usar no dia a dia pelo celular ou computador.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Como funciona o suporte e a manutenção mensal?</h4>
+                <p>O valor de sustentação cobre a hospedagem do sistema 24h no ar, backups de segurança e pequenos ajustes necessários (como alteração de serviços, preços ou textos).</p>
+            </div>
+            <div class="faq-item">
+                <h4>Quanto tempo leva para o meu sistema ficar pronto?</h4>
+                <p>Nossos protótipos e sistemas estruturados são entregues e configurados de forma ágil, geralmente entre 3 a 5 dias úteis após o alinhamento inicial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTRATAR / CONTATO -->
+    <section id="contato" class="section">
+        <div class="section-title">
+            <h2>Vamos Praticar a Inovação?</h2>
+            <p>Entre em contato agora mesmo e garanta 1 semana de teste para o seu negócio.</p>
+        </div>
+        
+        <div class="contratar-box">
+            <p>Pronto para automatizar seus processos, eliminar furos na agenda e economizar tempo precioso?</p>
+            <a href="https://wa.me/5531972478571?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20contratação%20do%20Agenda%20Pro." target="_blank" class="btn-primary btn-whatsapp" style="display: inline-flex;">
+                <i class="fa-brands fa-whatsapp"></i> Falar com Especialista no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Neologic Tech Systems. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
