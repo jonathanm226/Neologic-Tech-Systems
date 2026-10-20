@@ -1,0 +1,191 @@
+/* ==========================================================================
+   ESTILOS PARA PLANOS, FAQ E CONTRATAR (NEOLOGIC TECH)
+   ========================================================================== */
+.secao-planos, .secao-faq, .secao-contratar {
+    padding: 80px 5%;
+    background-color: #0b0f19; /* Fundo escuro padrão do site */
+    color: #ffffff;
+    text-align: center;
+}
+
+.secao-faq {
+    background-color: #070a12; /* Leve variação de tom para separar as seções */
+}
+
+.titulo-secao {
+    font-size: 2.3rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.subtitulo-secao {
+    color: #94a3b8;
+    margin-bottom: 50px;
+    font-size: 1rem;
+}
+
+/* Grid de Planos */
+.planos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card-plano {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 16px;
+    padding: 30px;
+    width: 320px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.card-plano:hover {
+    transform: translateY(-5px);
+}
+
+.card-plano.destaque {
+    border: 2px solid #3b82f6;
+    background: #1e293b;
+}
+
+.badge-destaque {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #3b82f6;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.card-plano h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #f8fafc;
+}
+
+.preco {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #38bdf8;
+    margin-bottom: 25px;
+}
+
+.preco span {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: normal;
+}
+
+.lista-beneficios {
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.lista-beneficios li {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+
+.btn-plano, .btn-plano-destaque {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-plano {
+    background: #334155;
+    color: #fff;
+}
+
+.btn-plano:hover {
+    background: #475569;
+}
+
+.btn-plano-destaque {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.btn-plano-destaque:hover {
+    background: #2563eb;
+}
+
+/* FAQ Estilo */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background: #111827;
+    border: 1px solid #1f2937;
+    padding: 20px 25px;
+    border-radius: 12px;
+}
+
+.faq-item h4 {
+    font-size: 1.1rem;
+    color: #f8fafc;
+    margin-bottom: 8px;
+}
+
+.faq-item p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* Contratar Box */
+.contratar-box {
+    background: #111827;
+    border: 1px solid #1f2937;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.contratar-box p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.btn-whatsapp-grande {
+    display: inline-block;
+    background: #22c55e;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-whatsapp-grande:hover {
+    background: #16a34a;
+    transform: scale(1.03);
+}
