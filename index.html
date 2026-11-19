@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neologic Tech Systems | Soluções Tecnológicas e Desenvolvimento de Sistemas</title>
+    <meta name="theme-color" content="#0b0f19">
     
     <!-- Metadados de SEO e Open Graph para Redes Sociais / WhatsApp -->
     <meta name="description" content="Desenvolvimento sob medida de sistemas web, painéis administrativos e automações para impulsionar o seu negócio com alta performance.">
@@ -66,6 +67,17 @@
         .logo-area i {
             color: var(--accent-color);
             font-size: 1.4rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 9px 11px;
+            background: var(--card-bg);
+            color: var(--text-main);
+            font-size: 1rem;
+            cursor: pointer;
         }
 
         nav a {
@@ -299,8 +311,27 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            nav { display: none; }
             .about-content { grid-template-columns: 1fr; }
+            header { padding-inline: 6%; }
+            .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 8px 6% 18px;
+                background: rgba(11, 15, 25, 0.98);
+                border-bottom: 1px solid var(--border-color);
+            }
+            nav.is-open { display: flex; }
+            nav a {
+                margin: 0;
+                padding: 12px 0;
+                border-top: 1px solid var(--border-color);
+            }
         }
     </style>
 </head>
@@ -312,9 +343,12 @@
             <i class="fa-solid fa-code-branch"></i>
             <span>Neologic Tech Systems</span>
         </a>
-        <nav>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i> Menu
+        </button>
+        <nav id="primary-nav">
             <a href="#solucoes">Soluções</a>
-            <a href="agenda-pro.html" style="color: var(--accent-color);">Agenda Pro</a>
+            <a href="desenvolvimento.html" style="color: var(--accent-color);">Desenvolvimento</a>
             <a href="#sobre">Sobre Nós</a>
             <a href="#cases">Cases</a>
             <a href="#faq">FAQ</a>
@@ -384,14 +418,14 @@
     <!-- CASES DE SUCESSO -->
     <section id="cases" class="section">
         <div class="section-title">
-            <h2>Cases de Sucesso</h2>
-            <p>Alguns dos projetos validados e entregues pela nossa engenharia</p>
+            <h2>Projetos e soluções digitais</h2>
+            <p>Experiência em diferentes desafios, produtos e áreas de negócio</p>
         </div>
         <div class="grid-3">
-            <a href="agenda-pro.html" class="card" style="text-decoration: none; color: inherit; display: block;">
+            <a href="desenvolvimento.html" class="card" style="text-decoration: none; color: inherit; display: block;">
                 <i class="fa-solid fa-calendar-days" style="color: #25d366;"></i>
-                <h3>Agendamento Automatizado <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; float: right; color: var(--accent-color);"></i></h3>
-                <p>Plataforma SaaS de alta performance voltada para o ecossistema de serviços e atendimento hora marcada, eliminando conflitos de horários e integrando confirmações via WhatsApp.</p>
+                <h3>Produto digital próprio <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; float: right; color: var(--accent-color);"></i></h3>
+                <p>O Agenda Pro marcou o início da nossa jornada. Hoje, aplicamos essa experiência em sistemas sob medida, painéis, integrações e automações para diferentes necessidades.</p>
             </a>
             
             <div class="card">
@@ -489,6 +523,24 @@
 
     <!-- SCRIPT DE INTEGRAÇÃO COM O WHATSAPP -->
     <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const primaryNav = document.getElementById('primary-nav');
+
+        menuToggle.addEventListener('click', function() {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
+            primaryNav.classList.toggle('is-open', !isOpen);
+        });
+
+        primaryNav.addEventListener('click', function(event) {
+            if (event.target.closest('a')) {
+                primaryNav.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menu');
+            }
+        });
+
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
